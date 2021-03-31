@@ -12,6 +12,7 @@ pipeline{
             parallel{
             stage('Sonar Analysis'){
                 steps{
+                    echo params.${version}
                     withSonarQubeEnv('sonar7') {
                         sh 'mvn sonar:sonar'
                         
