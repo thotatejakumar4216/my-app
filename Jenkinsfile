@@ -9,7 +9,7 @@ pipeline{
         stage('display parameters')
         {
             steps{
-            echo params.${version}
+            echo ${version}
         }
         }
         stage('Maven and Sonar'){
