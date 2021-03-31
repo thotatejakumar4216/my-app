@@ -6,7 +6,10 @@ pipeline{
       timeout(30)
     }
     stages{
-        
+        stage('display parameters')
+        {
+            echo params.${version}
+        }
         stage('Maven and Sonar'){
             
             parallel{
