@@ -14,6 +14,7 @@ pipeline{
                 steps{
                     withSonarQubeEnv('sonar7') {
                         sh 'mvn sonar:sonar'
+                        
                     }
                     
                     timeout(time: 1, unit: 'HOURS') {
@@ -29,7 +30,9 @@ pipeline{
             
              stage('Mvn Build'){
                 steps{
+                    echo ${version}
                     sh 'mvn clean package'
+                    
                 }
             }
         
