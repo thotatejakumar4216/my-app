@@ -30,7 +30,7 @@ pipeline{
             
              stage('Mvn Build'){
                 steps{
-                    echo ${version}
+                    echo params.${version}
                     sh 'mvn clean package'
                     
                 }
